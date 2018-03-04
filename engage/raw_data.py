@@ -9,5 +9,4 @@ class PullData(object):
     """
 
     def __init__():
-        pass
- 
+        pass 
