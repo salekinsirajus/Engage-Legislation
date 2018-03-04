@@ -15,15 +15,19 @@ git clone https://github.com/salekinsirajus/Engage-Legislation.git
     2. `cd` into `Engage-Legistlation` if you haven't already
     3. Create a new virtual environment for this project
     ```
-    virtualenv .
+    virtualenv venv
     ``` 
     4. Activate the virtual environment
     ```
-    source bin/activate
+    . venv/source bin/activate
     ``` 
     If you are a windows user, do this instead:
     ```
-    Scripts\activate.bat
+    venv\Scripts\activate.bat
+    ```
+    5. To deactivate the virtual environment (when you are done working with it)
+    ```
+    deactivate
     ```
 2. cd to `Engage-Legislation` directory
 3. Run the `requirements.txt` to install rest of the libraries
