@@ -32,11 +32,13 @@ git clone https://github.com/salekinsirajus/Engage-Legislation.git
 2. cd to `Engage-Legislation` directory
 3. Run the `requirements.txt` to install rest of the libraries
 ```
-pip install -r requirements.txt
+pip3 install -r requirements.txt
 ```
+Note: if your default python version is >3.0, you don't need to use `pip3`. Use
+`pip` instead
 4. Let the terminal know where the app is
 ```
-export FLASK_APP=app.py
+export FLASK_APP=run.py
 ```
 5. Run this app by running the following command
 ```
