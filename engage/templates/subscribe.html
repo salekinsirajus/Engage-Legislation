@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Engage with your local legislature</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+</head>
+<body class="container-fluid">
+
+<nav class="navbar navbar-light bg-faded">
+  <a class="navbar-brand" href="#">
+    <img src="" width="30" height="30"
+class="d-inline-block align-top" alt="">
+    <h1>ENGAGED CITIZEN</h1>
+  </a>
+</nav>
+
+
+    <h4> Hi There, please fill out the following form! </h4>
+    <div class="col-sm-4"></div>
+    <div class= "col-sm-5">    
+        <form action="/subscribe" method="POST">
+          <fieldset>
+            <div class="form-group">
+              <label for="email">Email address</label>
+              <input type="email" class="form-control" id="email"
+        aria-describedby="emailHelp" placeholder="Enter email">
+              <small id="emailHelp" class="form-text text-muted">We'll never share your
+        email with anyone else.</small>
+            </div>
+            <div class="form-group">
+              <label for="interval">I want to receive update every __ days!</label>
+              <select class="form-control" id="interval">
+                <option>1</option>
+                <option>7</option>
+                <option>14</option>
+                <option>30</option>
+              </select>
+            </div>
+
+
+            <div class="form-group">
+              <label for="state">Which state?</label>
+              <select class="form-control" id="state">
+                <option></option>
+
+
+            <option> AK </option>
+
+            <option> AL </option>
+
+            <option> AZ </option>
+
+            <option> AR </option>
+
+            <option> CA </option>
+
+            <option> CO </option>
+
+            <option> CT </option>
+
+            <option> DE </option>
+
+            <option> FL </option>
+
+            <option> GA </option>
+
+            <option> HI </option>
+
+            <option> ID </option>
+
+            <option> IL </option>
+
+            <option> IN </option>
+
+            <option> IA </option>
+
+            <option> KS </option>
+
+            <option> KY </option>
+
+            <option> LA </option>
+
+            <option> ME </option>
+
+            <option> MD </option>
+
+            <option> MA </option>
+
+            <option> MI </option>
+
+            <option> MN </option>
+
+            <option> MS </option>
+
+            <option> MO </option>
+
+            <option> MT </option>
+
+            <option> NE </option>
+
+            <option> NV </option>
+
+            <option> NH </option>
+
+            <option> NJ </option>
+
+            <option> NM </option>
+
+            <option> NY </option>
+
+            <option> NC </option>
+
+            <option> ND </option>
+
+            <option> OH </option>
+
+            <option> OK </option>
+
+            <option> OR </option>
+
+            <option> PA </option>
+
+            <option> RI </option>
+
+            <option> SC </option>
+
+            <option> SD </option>
+
+            <option> TN </option>
+
+            <option> TX </option>
+
+            <option> UT </option>
+
+            <option> VT </option>
+
+            <option> VA </option>
+
+            <option> WA </option>
+
+            <option> WV </option>
+
+            <option> WI </option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="chamber">Select Chamber:</label>
+              <select class="form-control" id="chamber">
+                <option>upper</option>
+                <option>lower</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="tags">Enter the topics (separate by a comma)</label>
+              <textarea class="form-control" id="tags" rows="3"></textarea>
+            </div>
+            <fieldset class="form-group">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </fieldset>
+        </form>
+
+    </div>
+     
+    <div class="col-sm-3"></div>
+
+</body>

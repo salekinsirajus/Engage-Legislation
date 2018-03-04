@@ -5,31 +5,36 @@ from flask import Flask
 from engage import mongo
 from engage.models import Subscriber, ExtractBills, NewsLetter
 from flask import render_template
+from flask import request # for webforms
 
 @app.route('/')
 def index():
     v = "Hello World"
-    return render_template('mail_card.html')
+    return render_template('landing.html')
 
-@app.route('/subscribe')
+@app.route('/sub_form')
+def sub_form(): 
+    return render_template('subscribe.html')
+
+@app.route('/subscribe', methods=["POST"])
 def subscribe():
-    # Have a mechanism for looking if the user is already in the db
-    # with unique id or email
     new_cust = Subscriber()
     v = "Unsuccessful"
-    # try:
-    v = new_cust.create("ssalek14@earlham.edu", "in", "upper", ["gun"], 1)
-        # subs = mongo.db.subscribers
-        # subs.insertss({'email':'ssalek144@earlham.edu'})
-    #v = "Successfully created new subscriber
-    #except Exception as e:
-    #    return ("error in subscriber creation ", e)
-    if v == None:
-        print ("v is none")
-    else:
-        pass
-    print("The value of v ", v)
-    return render_template('msg.html', msg=v)
+    email = request.form['email']   
+    state = request.form['state']
+    state = state.lower()
+    interval = request.form['interval']
+    chamber = request.form['chamber'] 
+    tags = request.form['tags']
+
+    v = new_cust.create(email, state, chamber, tags, interval)
+    #if v == None:
+    #    return "Form submission failed"
+    # else:
+    #    pass
+    
+    return v
+    #return render_template('subscribe.html', msg=v)
 
 
 @app.route('/show')
