@@ -28,12 +28,13 @@ def subscribe():
     tags = request.form['tags']
 
     v = new_cust.create(email, state, chamber, tags, interval)
-    #if v == None:
-    #    return "Form submission failed"
-    # else:
-    #    pass
-    
-    return v
+    if v == None:
+        return "Form submission failed"
+    else:
+        pass
+    print (v)    
+ 
+    return "Thank you!"
     #return render_template('subscribe.html', msg=v)
 
 

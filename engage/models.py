@@ -37,20 +37,20 @@ class NewsLetter(object):
             chamber = each['chamber']
 
             msg_for_rcpnt = bill_extractor.getBill(state, chamber, tags)
-            # all_candidates.append((email, msg_for_rcpnt))
+            #all_candidates.append((email, msg_for_rcpnt))
             
-            try:
-                msg_body = "hello world"
+            #try:
+            #    msg_body = "hello world"
                 # msg_body = render_template('mail_card.html')
-                msg = Message(msg_body,
-                                sender="mssshaown@gmail.com",
-                                recipients=email)
-                mail.send(msg) 
-                msg_sent.append((email, "Success"))
-            except Exception as e:
-                msg_sent.append((email, str(e)))
-        return msg_sent
-        #return msg_for_rcpnt
+            #    msg = Message(msg_body,
+            #                    sender="mssshaown@gmail.com",
+            #                    recipients=email)
+            #    mail.send(msg) 
+            #    msg_sent.append((email, "Success"))
+            #except Exception as e:
+            #    msg_sent.append((email, str(e)))
+        #return msg_sent
+        return msg_for_rcpnt
 
 class ExtractBills(object):
     def __init__(self):
