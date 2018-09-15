@@ -35,6 +35,7 @@ class NewsLetter(object):
             tags = each['search_tags']
             state = each['state']
             chamber = each['chamber']
+            print(email, tags)
 
             msg_for_rcpnt = bill_extractor.getBill(state, chamber, tags)
             #all_candidates.append((email, msg_for_rcpnt))
@@ -70,7 +71,7 @@ class ExtractBills(object):
 class Subscriber(object):
     """Represents a subscriper.
 
-    Args:
+    Attributes:
         email: a string that has the format of a valid email address
 
         state: a two char string for state, e.g., "in" for Indiana

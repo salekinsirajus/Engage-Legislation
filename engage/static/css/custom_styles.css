@@ -1,0 +1,7 @@
+/*Centering any column with BS grid system*/
+
+.col-centered{
+    float: none;
+    margin: 0 auto;
+}
+

@@ -14,12 +14,12 @@ def index():
 
 @app.route('/sub_form')
 def sub_form(): 
-    return render_template('subscribe.html')
+    return render_template('sub_form.html')
 
 @app.route('/subscribe', methods=["POST"])
 def subscribe():
     new_cust = Subscriber()
-    v = "Unsuccessful"
+
     email = request.form['email']   
     state = request.form['state']
     state = state.lower()
@@ -31,10 +31,9 @@ def subscribe():
     if v == None:
         return "Form submission failed"
     else:
-        pass
-    print (v)    
+        pass 
  
-    return "Thank you!"
+    return [email, state, interval, chamber, tags]
     #return render_template('subscribe.html', msg=v)
 
 

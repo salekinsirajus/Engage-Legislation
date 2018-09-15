@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,29 +6,64 @@
     <title>Engage with your local legislature</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/custom_styles.css') }}" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
 <body class="container-fluid">
- 
-    <div class="col-sm-3">
-    </div>
-    <div class="col-sm-6">
+
+<!-- A grey horizontal navbar that becomes vertical on small screens -->
+<nav class="navbar navbar-expand-sm bg-light">
+
+  <!-- Links -->
+  <ul class="navbar-nav">
+    <li class="nav-item">
+        <a class="navbar-brand"><i class="fa fa-gavel fa-md"></i></a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/">Engage Legislature</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/sub_form">Subscribe</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/sendUpdate">Update</a>
+    </li>
+  </ul>
+
+</nav>
+
+<div class="row"> 
+    <div class="col-sm-6 col-centered">
         {% for result in bill %}
             {% for elem in result  %}
                 <div class="jumbotron">
-                    <h5 class="display-3"> {{ elem['bill_id'] }}, {{elem['state']}} </h5>
+                    <h5 class="display-4">Bill: {{ elem['bill_id'] }},
+                        State:{{ elem['state']|upper}} </h5>
+                        {% if elem['subjects'] is defined %}
+                            <hr> 
+                            <a><i> Tagged under: </i></a>
+                            {% for tag in elem['subjects'] %}
+                                <a class="btn btn-warning btn-sm">
+                                    <i class="fa fa-tags"></i>
+                                 {{ tag }}</a>        
+                            {% endfor %}
+                            <hr>
+                        {% endif %}
                         <p class="lead"> {{ elem['title'] }} </p>
                         <hr class="my-4">
-                        <h3> Take Action now. </h3>
+                        <h3> Take Action Now. </h3>
                         <p class="lead">
-                            <a class="btn btn-primary btn-lg" href="#" role="button">Call your Representative!</a>
-                            <a class="btn btn-primary btn-lg" href="#" role="button">Sign a petition</a>
+                            <a class="btn btn-primary btn-lg" href="#"
+                            role="button"><i class="fa fa-phone"></i> Call Your Representative!</a>
+                            <a class="btn btn-primary btn-lg" href="#"
+                            role="button"><i class="fa fa-pencil"></i> Sign a Petition!</a>
                         </p>
                 </div>
                 {% endfor  %}
         {% endfor %}
     </div>
-    <div class="col-sm-3">
-    </div>
+
+</div>
 </body>
 </html>
 

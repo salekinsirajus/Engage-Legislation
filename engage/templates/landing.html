@@ -1,17 +1,39 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="utf-8">
     <title>Engage with your local legislature</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/custom_styles.css') }}" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 </head>
-<body class="container">
-<div class="row"
-    <div class="col-sm-3">
-    </div>
-    <div class="col-sm-6">
+<body class="container-fluid">
+
+<!-- A grey horizontal navbar that becomes vertical on small screens -->
+<nav class="navbar navbar-expand-sm bg-light">
+
+  <!-- Links -->
+  <ul class="navbar-nav">
+    <li class="nav-item">
+        <a class="navbar-brand">EL</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/">Engage Legislature</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/sub_form">Subscribe</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/sendUpdate">Update</a>
+    </li>
+  </ul>
+
+</nav>
+
+<div class="row">
+    <div class="col-sm-6 col-centered">
         <div class="card border-primary mb-3" style="max-width: 20rem;">
             <div class="card-header">Engage Locally</div>
             <div class="card-body">
@@ -25,8 +47,7 @@
                 <a class="btn btn-primary" href="/sub_form">Subscribe Today!</a>
             </div>
         </div>
-    <div class="col-sm-3">
-    </div>
+
 </div>
 </body>
 </html>
